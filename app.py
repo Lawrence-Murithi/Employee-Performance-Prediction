@@ -5,16 +5,14 @@ import joblib
 
 # Load the trained model
 model_filename = "employee_performance_model.joblib"
-
-#if os.path.exists(model_filename):
 best_model = joblib.load(model_filename)
 
 # Load dataset to check column structure
-df = pd.read_csv('INX_Future_Inc_Employee_Performance.csv')
+file = 'INX_Future_Inc_Employee_Performance.csv'
+df = pd.read_csv(file)
 
 # Setting the EmpNumber as index
 df.set_index('EmpNumber', inplace=True)
-
 
 # Streamlit App Title
 st.title("🏆 Employee Performance Prediction Model")
